@@ -6,8 +6,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
-    "chai": "^4.2.0",
-    "mocha": "^7.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
@@ -15,8 +13,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test-mocha": "mocha"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,12 +33,22 @@
     ]
   },
   "devDependencies": {
-    "husky": "^4.2.3"
+    "chai": "^4.2.0",
+    "husky": "^4.2.3",
+    "mocha": "^7.1.0"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm test",
       "pre-push": "npm test"
     }
+  },
+  "mocha": {
+    "diff": true,
+    "extension": [
+      "js"
+    ],
+    "reporter": "spec",
+    "ui": "bdd"
   }
 }
