@@ -2,11 +2,12 @@ var http = require("http")
 var assert = require("chai").assert
 
 describe("Learning how to test async", function(){
-    it("Async test",function(done){
+    it.only("Async test callback",function(done){
         http.get('http://www.example.com', function(res) {
             assert.equal(200, res.statusCode);
             done();
         });
+        done()
     })
 
     it("Async test with promise",function(done){
@@ -14,6 +15,7 @@ describe("Learning how to test async", function(){
             assert.equal(200, response.statusCode);
             done();
         })
+       
     })
 })
 
